@@ -15,9 +15,9 @@ namespace :slurp do
       t.rate_hourly = row["rate_hourly"]
       t.origin_id = row["origin_id"]
       t.save
-      # puts row.to_hash
+      puts row.to_hash
       # puts t.inspect
-      puts "#{t.name} saved"
+      # puts "#{t.name} saved"
     end
 
   end
