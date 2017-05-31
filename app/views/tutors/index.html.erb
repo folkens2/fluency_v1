@@ -1,0 +1,38 @@
+<div class="page-header">
+  <h1>
+    Tutors
+    <a href="/tutors/new" class="btn btn-lg btn-success">New Tutor</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Instruction lang</th>
+        <th>Instruction lang skill</th>
+        <th>Bio</th>
+        <th>Name</th>
+        <th>Rate hourly</th>
+        <th>Origin</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @tutors.each do |tutor| %>
+      <tr>
+        <td><%= tutor.instruction_lang_id %></td>
+        <td><%= tutor.instruction_lang_skill_id %></td>
+        <td><%= tutor.bio %></td>
+        <td><%= tutor.name %></td>
+        <td><%= tutor.rate_hourly %></td>
+        <td><%= tutor.origin_id %></td>
+        <td>
+          <a href="/tutors/<%= tutor.id %>" class="btn btn-primary">Show</a>
+          <a href="/tutors/<%= tutor.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_tutor/<%= tutor.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

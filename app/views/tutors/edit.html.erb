@@ -1,0 +1,82 @@
+<!-- Validation failure messages -->
+<% if @tutor.errors.any? %>
+  <% @tutor.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit Tutor #<%= @tutor.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_tutor/<%= @tutor.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for instruction_lang_id -->
+      <div class="form-group">
+        <label for="instruction_lang_id" class="control-label">
+          Instruction lang
+        </label>
+
+        <input type="text" id="instruction_lang_id" name="instruction_lang_id" placeholder="Instruction lang" class="form-control" value="<%= @tutor.instruction_lang_id %>">
+      </div>
+
+      <!-- Label and input for instruction_lang_skill_id -->
+      <div class="form-group">
+        <label for="instruction_lang_skill_id" class="control-label">
+          Instruction lang skill
+        </label>
+
+        <input type="text" id="instruction_lang_skill_id" name="instruction_lang_skill_id" placeholder="Instruction lang skill" class="form-control" value="<%= @tutor.instruction_lang_skill_id %>">
+      </div>
+
+      <!-- Label and input for bio -->
+      <div class="form-group">
+        <label for="bio" class="control-label">
+          Bio
+        </label>
+
+        <input type="text" id="bio" name="bio" placeholder="Bio" class="form-control" value="<%= @tutor.bio %>">
+      </div>
+
+      <!-- Label and input for name -->
+      <div class="form-group">
+        <label for="name" class="control-label">
+          Name
+        </label>
+
+        <input type="text" id="name" name="name" placeholder="Name" class="form-control" value="<%= @tutor.name %>">
+      </div>
+
+      <!-- Label and input for rate_hourly -->
+      <div class="form-group">
+        <label for="rate_hourly" class="control-label">
+          Rate hourly
+        </label>
+
+        <input type="text" id="rate_hourly" name="rate_hourly" placeholder="Rate hourly" class="form-control" value="<%= @tutor.rate_hourly %>">
+      </div>
+
+      <!-- Label and input for origin_id -->
+      <div class="form-group">
+        <label for="origin_id" class="control-label">
+          Origin
+        </label>
+
+        <input type="text" id="origin_id" name="origin_id" placeholder="Origin" class="form-control" value="<%= @tutor.origin_id %>">
+      </div>
+
+      <button class="btn btn-warning">
+        Update Tutor
+      </button>
+      or
+      <a href="/tutors/<%= @tutor.id %>">Cancel</a>
+    </form>
+  </div>
+</div>
