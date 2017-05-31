@@ -1,0 +1,64 @@
+<!-- Validation failure messages -->
+<% if @review.errors.any? %>
+  <% @review.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Add Review</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/create_review" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for reviewer_id -->
+      <div class="form-group">
+        <label for="reviewer_id" class="control-label">
+          Reviewer
+        </label>
+
+        <input type="text" id="reviewer_id" name="reviewer_id" placeholder="Reviewer" class="form-control" value="<%= @review.reviewer_id %>">
+      </div>
+
+      <!-- Label and input for tutor_id -->
+      <div class="form-group">
+        <label for="tutor_id" class="control-label">
+          Tutor
+        </label>
+
+        <input type="text" id="tutor_id" name="tutor_id" placeholder="Tutor" class="form-control" value="<%= @review.tutor_id %>">
+      </div>
+
+      <!-- Label and input for comments -->
+      <div class="form-group">
+        <label for="comments" class="control-label">
+          Comments
+        </label>
+
+        <input type="text" id="comments" name="comments" placeholder="Comments" class="form-control" value="<%= @review.comments %>">
+      </div>
+
+      <!-- Label and input for rating -->
+      <div class="form-group">
+        <label for="rating" class="control-label">
+          Rating
+        </label>
+
+        <input type="text" id="rating" name="rating" placeholder="Rating" class="form-control" value="<%= @review.rating %>">
+      </div>
+
+      <button class="btn btn-success">
+        Create Review
+      </button>
+      or
+      <a href="/reviews">Cancel</a>
+    </form>
+  </div>
+</div>
