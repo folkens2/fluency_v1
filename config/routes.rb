@@ -73,7 +73,8 @@ Rails.application.routes.draw do
   post "/create_tutor", :controller => "tutors", :action => "create"
 
   # READ
-  get "/tutors", :controller => "tutors", :action => "index"
+  # get "/tutors", :controller => "tutors", :action => "index"
+  root to: "tutors#index"
   get "/tutors/:id", :controller => "tutors", :action => "show"
 
   # UPDATE
@@ -86,7 +87,5 @@ Rails.application.routes.draw do
 
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-
-  root to: "home#index"
 
 end
