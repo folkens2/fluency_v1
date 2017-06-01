@@ -1,1 +1,17 @@
-﻿id,reviewer_id,tutor_id,comments,rating0,15,0,He was the best tutor ever,31,14,1,He was the worst tutor ever,22,13,2,She taught me stuff,53,12,3,She taught me a lot of stuff,44,11,4,She knew how to teach,15,10,5,She knew the language well,06,9,6,She helped me with pronunciation,27,8,7,She helped me with vocabulary,58,7,8,She taught me about the city where she was from,39,6,9,He was knowledgeable about the language,410,5,10,He knew a lot about the culture and taught me all that he knew,411,4,11,He knew how to teach me as a beginner,412,3,12,He knew about a lot of languages,313,2,13,He could understand my broken Spanish,314,1,14,He could understand my broken Italian,215,0,15,He could understand my broken German,1
+reviewer_id,tutor_id,comments,rating
+15,0,He was the best tutor ever,3
+14,1,He was the worst tutor ever,2
+13,2,She taught me stuff,5
+12,3,She taught me a lot of stuff,4
+11,4,She knew how to teach,1
+10,5,She knew the language well,0
+9,6,She helped me with pronunciation,2
+8,7,She helped me with vocabulary,5
+7,8,She taught me about the city where she was from,3
+6,9,He was knowledgeable about the language,4
+5,10,He knew a lot about the culture and taught me all that he knew,4
+4,11,He knew how to teach me as a beginner,4
+3,12,He knew about a lot of languages,3
+2,13,He could understand my broken Spanish,3
+1,14,He could understand my broken Italian,2
+0,15,He could understand my broken German,1
