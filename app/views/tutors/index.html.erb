@@ -20,8 +20,8 @@
 
       <% @tutors.each do |tutor| %>
       <tr>
-        <td><%= tutor.instruction_lang_id %></td>
-        <td><%= tutor.instruction_lang_skill_id %></td>
+        <td><%= Language.find_by(:id => tutor.instruction_lang_id).name.capitalize %></td>
+        <td><%= Skill.find_by(:id => tutor.instruction_lang_skill_id).level %></td>
         <td><%= tutor.bio %></td>
         <td><%= tutor.name %></td>
         <td><%= tutor.rate_hourly %></td>

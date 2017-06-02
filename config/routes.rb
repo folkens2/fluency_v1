@@ -73,7 +73,7 @@ Rails.application.routes.draw do
   post "/create_tutor", :controller => "tutors", :action => "create"
 
   # READ
-  # get "/tutors", :controller => "tutors", :action => "index"
+  get "/tutors", :controller => "tutors", :action => "index"
   root to: "tutors#index"
   get "/tutors/:id", :controller => "tutors", :action => "show"
 
