@@ -20,11 +20,8 @@
 
       <!-- Label and input for reviewer_id -->
       <div class="form-group">
-        <label for="reviewer_id" class="control-label">
-          Reviewer
-        </label>
 
-        <input type="text" id="reviewer_id" name="reviewer_id" placeholder="Reviewer" class="form-control" value="<%= current_user.id %>">
+        <input type="hidden" id="reviewer_id" name="reviewer_id" placeholder="Reviewer" class="form-control" value="<%= current_user.id %>">
       </div>
 
       <!-- Label and input for tutor_id -->
@@ -53,7 +50,7 @@
           Rating
         </label>
 
-        <input type="text" id="rating" name="rating" placeholder="Rating" class="form-control" value="<%= @review.rating %>">
+        <input type="text" id="rating" name="rating" placeholder="Rate your tutoring session with a score from 1 (very unsatisfied) to 5 (very satisfied)" class="form-control" value="<%= @review.rating %>">
       </div>
 
       <button class="btn btn-success">
