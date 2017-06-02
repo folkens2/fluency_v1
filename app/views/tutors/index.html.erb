@@ -22,10 +22,10 @@
       <tr>
         <td><%= Language.find_by(:id => tutor.instruction_lang_id).name.capitalize %></td>
         <td><%= Skill.find_by(:id => tutor.instruction_lang_skill_id).level %></td>
-        <td><%= tutor.bio %></td>
+        <td><%= truncate(tutor.bio) %></td>
         <td><%= tutor.name %></td>
-        <td><%= tutor.rate_hourly %></td>
-        <td><%= tutor.origin_id %></td>
+        <td><%= number_to_currency(tutor.rate_hourly, :precision => 0) %></td>
+        <td><%= Country.find_by(:id => tutor.origin_id).name %></td>
         <td>
           <a href="/tutors/<%= tutor.id %>" class="btn btn-primary">Show</a>
           <a href="/tutors/<%= tutor.id %>/edit" class="btn btn-warning">Edit</a>
