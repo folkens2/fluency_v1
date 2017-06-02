@@ -38,3 +38,15 @@
     </div>
   </div>
 </div>
+
+<div class="row">
+  <div class="">
+    <ul>
+      <% @tutor.reviews.each do |review|  %>
+      <li>Reviewer: <%= review.user.email %></a></li>
+      <li><a href="/reviews/<%= review.id %>"><%= review.comments %></a></li>
+      <% end  %>
+    </ul>
+  </div>
+
+</div>
