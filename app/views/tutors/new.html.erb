@@ -1,11 +1,11 @@
 <!-- Validation failure messages -->
 <% if @tutor.errors.any? %>
-  <% @tutor.errors.full_messages.each do |message| %>
-    <div class="alert alert-dismissable alert-danger">
-      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-      <%= message %>
-    </div>
-  <% end %>
+<% @tutor.errors.full_messages.each do |message| %>
+<div class="alert alert-dismissable alert-danger">
+  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+  <%= message %>
+</div>
+<% end %>
 <% end %>
 
 <div class="page-header">
@@ -21,19 +21,21 @@
       <!-- Label and input for instruction_lang_id -->
       <div class="form-group">
         <label for="instruction_lang_id" class="control-label">
-          Instruction lang
+          Instruction language
         </label>
 
-        <input type="text" id="instruction_lang_id" name="instruction_lang_id" placeholder="Instruction lang" class="form-control" value="<%= @tutor.instruction_lang_id %>">
+        <%= select_tag("instruction_lang_id", options_from_collection_for_select(Language.all, :id, :name, @tutor.instruction_lang_id), :class => "form-control") %>
+        <!-- <input type="text" id="instruction_lang_id" name="instruction_lang_id" placeholder="Instruction lang" class="form-control" value="<%= @tutor.instruction_lang_id %>"> -->
       </div>
 
       <!-- Label and input for instruction_lang_skill_id -->
       <div class="form-group">
         <label for="instruction_lang_skill_id" class="control-label">
-          Instruction lang skill
+          Instruction language skill
         </label>
 
-        <input type="text" id="instruction_lang_skill_id" name="instruction_lang_skill_id" placeholder="Instruction lang skill" class="form-control" value="<%= @tutor.instruction_lang_skill_id %>">
+        <%= select_tag("instruction_lang_skill_id", options_from_collection_for_select(Skill.all, :id, :level, @tutor.instruction_lang_skill_id), :class => "form-control") %>
+        <!-- <input type="text" id="instruction_lang_skill_id" name="instruction_lang_skill_id" placeholder="Instruction lang skill" class="form-control" value="<%= @tutor.instruction_lang_skill_id %>"> -->
       </div>
 
       <!-- Label and input for bio -->
@@ -69,7 +71,8 @@
           Origin
         </label>
 
-        <input type="text" id="origin_id" name="origin_id" placeholder="Origin" class="form-control" value="<%= @tutor.origin_id %>">
+        <%= select_tag("origin_id", options_from_collection_for_select(Country.all, :id, :name, @tutor.origin_id), :class => "form-control") %>
+        <!-- <input type="text" id="origin_id" name="origin_id" placeholder="Origin" class="form-control" value="<%= @tutor.origin_id %>"> -->
       </div>
 
       <button class="btn btn-success">
