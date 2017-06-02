@@ -5,23 +5,23 @@
 <div class="row">
   <div class="col-md-12 mb-2">
     <dl class="dl-horizontal">
-      <dt>Instruction lang</dt>
-      <dd><%= @tutor.instruction_lang_id %></dd>
+      <dt>Instruction language</dt>
+      <dd><%= @tutor.instruction_lang.name.capitalize %></dd>
 
-      <dt>Instruction lang skill</dt>
-      <dd><%= @tutor.instruction_lang_skill_id %></dd>
+      <dt>Instruction language skill</dt>
+      <dd><%= @tutor.instruction_lang_skill.level %></dd>
 
-      <dt>Bio</dt>
+      <dt>About me</dt>
       <dd><%= @tutor.bio %></dd>
 
       <dt>Name</dt>
       <dd><%= @tutor.name %></dd>
 
       <dt>Rate hourly</dt>
-      <dd><%= @tutor.rate_hourly %></dd>
+      <dd><%= number_to_currency(@tutor.rate_hourly, precision: 0) %></dd>
 
       <dt>Origin</dt>
-      <dd><%= @tutor.origin_id %></dd>
+      <dd><%= @tutor.origin.name %></dd>
 
     </dl>
 
