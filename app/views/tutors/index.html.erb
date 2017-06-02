@@ -27,7 +27,8 @@
         <td><%= truncate(tutor.bio) %></td>
         <td><%= number_to_currency(tutor.rate_hourly, :precision => 0) %></td>
         <td>
-          <%=  %> /5 rating
+          <%= tutor.reviews.each do |review|
+            review.rating %> /5 rating
           <p><%= tutor.reviews.count %> reviews
         </td>
         <td><%= Country.find_by(:id => tutor.origin_id).name %></td>
