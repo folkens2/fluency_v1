@@ -9,22 +9,27 @@
   <div class="col-md-12">
     <table class="table table-striped table-hover">
       <tr>
-        <th>Instruction lang</th>
-        <th>Instruction lang skill</th>
-        <th>Bio</th>
         <th>Name</th>
-        <th>Rate hourly</th>
+        <th>Teaching language</th>
+        <th>Proficiency</th>
+        <th>About me</th>
+        <th>Hourly rate</th>
+        <th>Rating</th>
         <th>Origin</th>
         <th>Actions</th>
       </tr>
 
       <% @tutors.each do |tutor| %>
       <tr>
+        <td><%= tutor.name %></td>
         <td><%= Language.find_by(:id => tutor.instruction_lang_id).name.capitalize %></td>
         <td><%= Skill.find_by(:id => tutor.instruction_lang_skill_id).level %></td>
         <td><%= truncate(tutor.bio) %></td>
-        <td><%= tutor.name %></td>
         <td><%= number_to_currency(tutor.rate_hourly, :precision => 0) %></td>
+        <td>
+          <%=  %> /5 rating
+          <p><%= tutor.reviews.count %> reviews
+        </td>
         <td><%= Country.find_by(:id => tutor.origin_id).name %></td>
         <td>
           <a href="/tutors/<%= tutor.id %>" class="btn btn-primary">Show</a>
