@@ -21,9 +21,9 @@
 
       <% @tutors.each do |tutor| %>
       <% tutor.reviews.each do |review|
-        numerator = review.rating.sum
-        denominator = review.rating.count
-        @average_tutor_rating = numerator / denominator
+        # numerator = review.rating.sum
+        # denominator = review.rating.count
+        # @average_tutor_rating = numerator / denominator
       end %>
 
       <tr>
@@ -33,8 +33,16 @@
         <td><%= truncate(tutor.bio) %></td>
         <td><%= number_to_currency(tutor.rate_hourly, :precision => 0) %></td>
         <td>
-           <%= @average_tutor_rating %>/5 rating
-          <p><%= tutor.reviews.count %> reviews
+          <!-- <%= @average_tutor_rating %>/5 rating -->
+          <%=  %>/5 rating
+          <p>
+            <% if tutor.reviews.count == 1 %>
+            <%= tutor.reviews.count %> review
+            <% elsif tutor.reviews.count == 0 %>
+            No reviews
+            <% else %>
+            <%= tutor.reviews.count %> reviews
+            <% end %>
           </td>
           <td><%= Country.find_by(:id => tutor.origin_id).name %></td>
           <td>
