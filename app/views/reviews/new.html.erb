@@ -1,11 +1,11 @@
 <!-- Validation failure messages -->
 <% if @review.errors.any? %>
-  <% @review.errors.full_messages.each do |message| %>
-    <div class="alert alert-dismissable alert-danger">
-      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-      <%= message %>
-    </div>
-  <% end %>
+<% @review.errors.full_messages.each do |message| %>
+<div class="alert alert-dismissable alert-danger">
+  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+  <%= message %>
+</div>
+<% end %>
 <% end %>
 
 <div class="page-header">
@@ -24,7 +24,7 @@
           Reviewer
         </label>
 
-        <input type="text" id="reviewer_id" name="reviewer_id" placeholder="Reviewer" class="form-control" value="<%= @review.reviewer_id %>">
+        <input type="text" id="reviewer_id" name="reviewer_id" placeholder="Reviewer" class="form-control" value="<%= current_user.id %>">
       </div>
 
       <!-- Label and input for tutor_id -->
@@ -33,7 +33,9 @@
           Tutor
         </label>
 
-        <input type="text" id="tutor_id" name="tutor_id" placeholder="Tutor" class="form-control" value="<%= @review.tutor_id %>">
+        <%= select_tag("tutor_id", options_from_collection_for_select(Tutor.all, :id, :name, @review.tutor_id), :class => "form-control") %>
+
+        <!-- <input type="text" id="tutor_id" name="tutor_id" placeholder="Tutor" class="form-control" value="<%= @review.tutor_id %>"> -->
       </div>
 
       <!-- Label and input for comments -->
