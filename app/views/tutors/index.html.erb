@@ -28,8 +28,10 @@
 
       <tr>
         <td><%= tutor.name %></td>
-        <td><%= Language.find_by(:id => tutor.instruction_lang_id).name.capitalize %></td>
-        <td><%= Skill.find_by(:id => tutor.instruction_lang_skill_id).level %></td>
+        <!-- <td><%= Language.find_by(:id => tutor.instruction_lang_id).name.capitalize %></td> -->
+        <td><%= tutor.instruction_lang.name.capitalize %></td>
+        <!-- <td><%= Skill.find_by(:id => tutor.instruction_lang_skill_id).level %></td> -->
+        <td><%= tutor.instruction_lang_skill.level %></td>
         <td><%= truncate(tutor.bio) %></td>
         <td><%= number_to_currency(tutor.rate_hourly, :precision => 0) %></td>
         <td>
