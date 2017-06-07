@@ -5,12 +5,13 @@ namespace :slurp do
 
     require "csv"
 
-    csv_text = File.read(Rails.root.join("lib", "csvs", "countries.csv"))
+    csv_text = File.read(Rails.root.join("lib", "csvs", "users.csv"))
     csv = CSV.parse(csv_text, :headers => true, :encoding => "ISO-8859-1")
     csv.each do |row|
-      c = Country.new
-      c.name = row["name"]
-      c.save
+      u = User.new
+      u.email = row["email"]
+      u.password = row["password"]
+      u.save
       puts row.to_hash
       # puts t.inspect
       # puts "#{t.name} saved"
@@ -82,7 +83,7 @@ namespace :slurp do
       if lang == nil
         # Add that language to language table first
         new_language_entry = Language.new
-        new_language_entry.name = row["name"]
+        new_language_entry.name = row["language_name"]
         new_language_entry.save
         lang = new_language_entry
       end
