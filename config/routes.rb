@@ -85,6 +85,11 @@ Rails.application.routes.draw do
   get "/delete_tutor/:id", :controller => "tutors", :action => "destroy"
   #------------------------------
 
+  # Routes for the Tutor_Reviews resource
+
+  # READ
+  get "/tutor_reviews/:id", :controller => "tutorreviews", :action => "show"
+
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
