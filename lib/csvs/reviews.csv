@@ -4,7 +4,7 @@ reviewer_id,tutor_id,comments,rating
 14,3,She taught me stuff,5
 13,4,She taught me a lot of stuff,4
 12,5,She knew how to teach,1
-11,6,She knew the language well,0
+11,6,She knew the language well,1
 10,7,She helped me with pronunciation,2
 9,8,She helped me with vocabulary,5
 8,9,She taught me about the city where she was from,3
@@ -13,5 +13,5 @@ reviewer_id,tutor_id,comments,rating
 5,12,He knew how to teach me as a beginner,4
 4,13,He knew about a lot of languages,3
 3,14,He could understand my broken Spanish,3
-2,15,He could understand my broken Italian,2
-1,16,He could understand my broken German,1
+17,15,He could understand my broken Italian,2
+18,16,He could understand my broken German,1
