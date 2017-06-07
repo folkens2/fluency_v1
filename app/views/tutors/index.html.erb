@@ -29,9 +29,8 @@
       <tr>
         <td><%= tutor.name %></td>
         <!-- <td><%= Language.find_by(:id => tutor.instruction_lang_id).name.capitalize %></td> -->
-        <td><%= tutor.instruction_lang.name.capitalize %></td>
-        <!-- <td><%= Skill.find_by(:id => tutor.instruction_lang_skill_id).level %></td> -->
-        <td><%= tutor.instruction_lang_skill.level %></td>
+        <td><%= tutor.language.name.capitalize %></td>
+        <td><%= tutor.skill.level %></td>
         <td><%= truncate(tutor.bio) %></td>
         <td><%= number_to_currency(tutor.rate_hourly, :precision => 0) %></td>
         <td>
@@ -46,7 +45,7 @@
             <%= tutor.reviews.count %> reviews
             <% end %>
           </td>
-          <td><%= Country.find_by(:id => tutor.origin_id).name %></td>
+          <td><%= tutor.country.name %></td>
           <td>
             <a href="/tutors/<%= tutor.id %>" class="btn btn-primary">Show</a>
             <a href="/tutors/<%= tutor.id %>/edit" class="btn btn-warning">Edit</a>
