@@ -38,27 +38,32 @@
         <td>
           <!-- <%= @average_tutor_rating %>/5 rating -->
           <!-- <%= number_with_precision(@average_tutor_rating, :precision => 1) %>/5 rating -->
-            <% if tutor.reviews.count == 1 %>
-            <%= number_with_precision(@average_tutor_rating, :precision => 1) %>/5 rating
+
+          <% if tutor.reviews.count == 1 %>
+          <%= number_with_precision(@average_tutor_rating, :precision => 1) %> / 5.0 rating
+          <a href="/tutor_reviews/<%= tutor.id %>">
             <p><%= tutor.reviews.count %> review</p>
-            <% elsif tutor.reviews.count == 0 %>
-            No reviews
-            <% else %>
-            <%= number_with_precision(@average_tutor_rating, :precision => 1) %>/5 rating
+          </a>
+          <% elsif tutor.reviews.count == 0 %>
+          No reviews
+          <% else %>
+          <%= number_with_precision(@average_tutor_rating, :precision => 1) %> / 5.0 rating
+          <a href="/tutor_reviews/<%= tutor.id %>">
             <p><%= tutor.reviews.count %> reviews</p>
-            <% end %>
-          </td>
-          <td><%= tutor.country.name %></td>
-          <td>
-            <a href="/tutors/<%= tutor.id %>" class="btn btn-primary">Show</a>
-            <a href="/tutors/<%= tutor.id %>/edit" class="btn btn-warning">Edit</a>
-            <a href="/delete_tutor/<%= tutor.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
-            <a href="/tutor_reviews/<%= tutor.id %>" class="btn btn-primary" rel="nofollow">Reviews</a>
-          </td>
-        </tr>
+          </a>
+          <% end %>
 
-        <% end %>
-      </table>
+        </td>
+        <td><%= tutor.country.name %></td>
+        <td>
+          <a href="/tutors/<%= tutor.id %>" class="btn btn-primary">Show</a>
+          <a href="/tutors/<%= tutor.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_tutor/<%= tutor.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
 
-    </div>
+      <% end %>
+    </table>
+
   </div>
+</div>
