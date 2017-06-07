@@ -1,6 +1,23 @@
 namespace :slurp do
   desc "TODO"
 
+  task users: :environment do
+
+    require "csv"
+
+    csv_text = File.read(Rails.root.join("lib", "csvs", "countries.csv"))
+    csv = CSV.parse(csv_text, :headers => true, :encoding => "ISO-8859-1")
+    csv.each do |row|
+      c = Country.new
+      c.name = row["name"]
+      c.save
+      puts row.to_hash
+      # puts t.inspect
+      # puts "#{t.name} saved"
+    end
+
+  end
+
   task countries: :environment do
 
     require "csv"
@@ -60,7 +77,17 @@ namespace :slurp do
     csv = CSV.parse(csv_text, :headers => true, :encoding => "ISO-8859-1")
     csv.each do |row|
       t = Tutor.new
-      t.instruction_lang_id = row["instruction_lang_id"]
+
+      lang = Language.find_by_name(row["language_name"])
+      if lang == nil
+        # Add that language to language table first
+        new_language_entry = Language.new
+        new_language_entry.name = row["name"]
+        new_language_entry.save
+        lang = new_language_entry
+      end
+      t.instruction_lang_id = lang.id #row["instruction_lang_id"]
+
       t.instruction_lang_skill_id = row["instruction_lang_skill_id"]
       t.bio = row["bio"]
       t.name = row["name"]
@@ -68,7 +95,7 @@ namespace :slurp do
       t.origin_id = row["origin_id"]
       t.save
       puts row.to_hash
-      # puts t.inspect
+      puts t.inspect
       # puts "#{t.name} saved"
     end
 
