@@ -11,7 +11,41 @@
       <tr>
         <th>Name</th>
         <th>Teaching language</th>
+
+        <div class="dropdown">
+          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            Teaching language
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+            <% @tutors.each do |tutor| %>
+            <% tutor_names = [] %>
+            <% tutor_name = tutor.name %>
+            <% tutor_names.push(tutor_name) %>
+            <% tutor_names_unique = tutor_names.uniq  %>
+            <li><a href="#"><%= tutor_names_unique %></a></li>
+            <% end  %>
+          </ul>
+        </div>
+
         <th>Proficiency</th>
+
+        <div class="dropdown">
+          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            Proficiency
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+            <% @tutors.each do |tutor| %>
+            <% levels = [] %>
+            <% level = tutor.skill.level %>
+            <% levels.push(level) %>
+            <!-- <% levels_unique = levels.uniq %> -->
+            <li><a href="#"><%= levels.uniq %></a></li>
+            <% end  %>
+          </ul>
+        </div>
+
         <th>About me</th>
         <th>Hourly rate</th>
         <th>Rating</th>
