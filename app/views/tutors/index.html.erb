@@ -20,11 +20,13 @@
       </tr>
 
       <% @tutors.each do |tutor| %>
-      <% tutor.reviews.each do |review|
-        # numerator = review.rating.sum
-        # denominator = review.rating.count
-        # @average_tutor_rating = numerator / denominator
-      end %>
+
+      <% review_ratings = [] %>
+      <% tutor.reviews.each do |review| %>
+      <% review_rating = review.rating.to_f %>
+      <% review_ratings.push(review_rating) %>
+      <% @average_tutor_rating = review_ratings.sum / review_ratings.count %>
+      <% end %>
 
       <tr>
         <td><%= tutor.name %></td>
@@ -35,14 +37,15 @@
         <td><%= number_to_currency(tutor.rate_hourly, :precision => 0) %></td>
         <td>
           <!-- <%= @average_tutor_rating %>/5 rating -->
-          <%=  %>/5 rating
-          <p>
+          <!-- <%= number_with_precision(@average_tutor_rating, :precision => 1) %>/5 rating -->
             <% if tutor.reviews.count == 1 %>
-            <%= tutor.reviews.count %> review
+            <%= number_with_precision(@average_tutor_rating, :precision => 1) %>/5 rating
+            <p><%= tutor.reviews.count %> review</p>
             <% elsif tutor.reviews.count == 0 %>
             No reviews
             <% else %>
-            <%= tutor.reviews.count %> reviews
+            <%= number_with_precision(@average_tutor_rating, :precision => 1) %>/5 rating
+            <p><%= tutor.reviews.count %> reviews</p>
             <% end %>
           </td>
           <td><%= tutor.country.name %></td>
@@ -52,7 +55,9 @@
             <a href="/delete_tutor/<%= tutor.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
           </td>
         </tr>
+
         <% end %>
       </table>
+
     </div>
   </div>
