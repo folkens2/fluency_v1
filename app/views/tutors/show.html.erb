@@ -6,10 +6,10 @@
   <div class="col-md-12 mb-2">
     <dl class="dl-horizontal">
       <dt>Instruction language</dt>
-      <dd><%= @tutor.instruction_lang.name.capitalize %></dd>
+      <dd><%= @tutor.language.name.capitalize %></dd>
 
       <dt>Instruction language skill</dt>
-      <dd><%= @tutor.instruction_lang_skill.level %></dd>
+      <dd><%= @tutor.skill.level %></dd>
 
       <dt>About me</dt>
       <dd><%= @tutor.bio %></dd>
@@ -21,7 +21,7 @@
       <dd><%= number_to_currency(@tutor.rate_hourly, precision: 0) %></dd>
 
       <dt>Origin</dt>
-      <dd><%= @tutor.origin.name %></dd>
+      <dd><%= @tutor.country.name %></dd>
 
     </dl>
 
