@@ -18,12 +18,8 @@
             <span class="caret"></span>
           </button>
           <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-            <% @tutors.each do |tutor| %>
-            <% tutor_names = [] %>
-            <% tutor_name = tutor.name %>
-            <% tutor_names.push(tutor_name) %>
-            <% tutor_names_unique = tutor_names.uniq  %>
-            <li><a href="#"><%= tutor_names_unique %></a></li>
+            <% @languages.each do |language| %>
+            <li><a href="#"><%= language.name %></a></li>
             <% end  %>
           </ul>
         </div>
@@ -36,12 +32,8 @@
             <span class="caret"></span>
           </button>
           <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-            <% @tutors.each do |tutor| %>
-            <% levels = [] %>
-            <% level = tutor.skill.level %>
-            <% levels.push(level) %>
-            <!-- <% levels_unique = levels.uniq %> -->
-            <li><a href="#"><%= levels.uniq %></a></li>
+            <% @skills.each do |skill| %>
+            <li><a href="#"><%= skill.level %></a></li>
             <% end  %>
           </ul>
         </div>
@@ -50,6 +42,19 @@
         <th>Hourly rate</th>
         <th>Rating</th>
         <th>Origin</th>
+
+        <div class="dropdown">
+          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            Origin
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+            <% @origins.each do |origin| %>
+            <li><a href="#"><%= origin.name %></a></li>
+            <% end  %>
+          </ul>
+        </div>
+
         <th>Actions</th>
       </tr>
 

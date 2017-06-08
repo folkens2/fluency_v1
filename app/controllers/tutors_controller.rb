@@ -1,6 +1,9 @@
 class TutorsController < ApplicationController
   def index
     @tutors = Tutor.all
+    @languages = Language.all
+    @skills = Skill.all
+    @origins = Country.all
 
     render("tutors/index.html.erb")
   end
