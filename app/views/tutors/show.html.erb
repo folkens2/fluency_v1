@@ -39,14 +39,29 @@
   </div>
 </div>
 
+
+
 <div class="row">
-  <div class="">
-    <ul>
-      <% @tutor.reviews.each do |review|  %>
-      <li>Reviewer: <%= review.user.email %></a></li>
+
+  <h4>
+    Reviews for <%= @tutor.name %>
+  </h4>
+
+  <% @tutor.reviews.each do |review|  %>
+
+  <ul class="media-list">
+    <li class="media">
+      <div class="media-body">
+        <h6>
+          <%= review.user.email %>
+          <small><%= time_ago_in_words(review.created_at)%> ago</small>
+        </h6>
+      </div>
+      <!-- <li>Reviewer: <%= review.user.email %></a></li> -->
       <li><a href="/reviews/<%= review.id %>"><%= review.comments %></a></li>
       <% end  %>
-    </ul>
-  </div>
+    </li>
+  </ul>
+
 
 </div>
