@@ -47,13 +47,22 @@
     Reviews for <%= @tutor.name %>
   </h4>
 
-  <% @tutor.reviews.each do |review|  %>
+
+  <!-- <% @tutor.reviews.each do |review| %> -->
+  <!-- <% reviewers = [] %> -->
+  <!-- <% reviewer = review.user.email %> -->
+  <!-- <% reviewer.push(reviewer) %> -->
+  <!-- <% reviewer_uniq = reviewer.to_a.uniq %> -->
+  <!-- <% end  %> -->
+
+  <% @tutor.reviews.each do |review| %>
 
   <ul class="media-list">
     <li class="media">
       <div class="media-body">
         <h6>
-          <%= review.user.email %>
+          <!-- <%= review.user.email %> -->
+          <%= reviewer  %>
           <small><%= time_ago_in_words(review.created_at)%> ago</small>
         </h6>
       </div>
