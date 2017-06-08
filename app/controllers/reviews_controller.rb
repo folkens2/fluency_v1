@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
   def index
-    @reviews = Review.all
+    @reviews = Review.where(:reviewer_id => current_user.id)
 
     render("reviews/index.html.erb")
   end

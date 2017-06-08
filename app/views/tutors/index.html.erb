@@ -1,7 +1,7 @@
 <div class="page-header">
   <h1>
     Tutors
-    <a href="/tutors/new" class="btn btn-lg btn-success">New Tutor</a>
+    <a href="/tutors/new" class="btn btn-lg btn-success">Become a Tutor</a>
   </h1>
 </div>
 
@@ -82,14 +82,12 @@
             <p><%= tutor.reviews.count %> reviews</p>
           </a>
           <% end %>
-          <p><a href="/tutor_reviews/<%= tutor.id %>/new">Write a review</a></p>
 
         </td>
         <td><%= tutor.country.name %></td>
         <td>
-          <a href="/tutors/<%= tutor.id %>" class="btn btn-primary">Show</a>
-          <a href="/tutors/<%= tutor.id %>/edit" class="btn btn-warning">Edit</a>
-          <a href="/delete_tutor/<%= tutor.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+          <a href="/tutors/<%= tutor.id %>" class="btn btn-primary">Profile</a>
+          <a href="/tutor_reviews/<%= tutor.id %>/new" class="btn btn-success">Write Review</a>
         </td>
       </tr>
 
