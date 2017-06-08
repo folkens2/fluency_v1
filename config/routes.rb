@@ -89,7 +89,6 @@ Rails.application.routes.draw do
 
   # CREATE
   get "/tutor_reviews/:id/new", :controller => "tutorreviews", :action => "new"
-  post "/tutor_reviews/create_review", :controller => "tutorreviews", :action => "create"
 
   # READ
   get "/tutor_reviews/:id", :controller => "tutorreviews", :action => "show"

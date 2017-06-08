@@ -26,15 +26,8 @@
 
       <!-- Label and input for tutor_id -->
       <div class="form-group">
-        <label for="tutor_id" class="control-label">
-          Tutor
-        </label>
 
-        <%= select_tag("tutor_id", options_from_collection_for_select(Tutor.all, :id, :name, @review.tutor_id), :class => "form-control") %>
-
-        <!-- @review.tutor_id -->
-
-        <!-- <input type="text" id="tutor_id" name="tutor_id" placeholder="Tutor" class="form-control" value="<%= @review.tutor_id %>"> -->
+        <input type="hidden" id="tutor_id" name="tutor_id" placeholder="Tutor" class="form-control" value="<%= @tutor.id %>">
       </div>
 
       <!-- Label and input for comments -->
