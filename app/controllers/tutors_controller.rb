@@ -1,7 +1,10 @@
 class TutorsController < ApplicationController
   def index
     @tutors = Tutor.all
-    @languages = Language.all
+
+    @q = Tutor.ransack(params[:q])
+    @tutors_filter = @q.result.includes(:skill, :language, :country)
+
     @skills = Skill.all
     @origins = Country.all
 

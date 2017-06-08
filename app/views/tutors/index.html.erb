@@ -5,56 +5,44 @@
   </h1>
 </div>
 
+<!-- Dropdown menu filters -->
+
+<%= search_form_for @q do |f| %>
+<p class="lead">Narrow results:</p>
+
+<div class="form-group">
+  <%= f.label :language_id_eq, "Teaching language" %>
+  <%= f.select :language_id_eq, options_from_collection_for_select(Language.all, :id, :name, @q.language_id_eq), { :include_blank => true }, :class => "form-control" %>
+</div>
+
+<div class="form-group">
+  <%= f.label :skill_id_eq, "Language Proficiency" %>
+  <%= f.select :skill_id_eq, options_from_collection_for_select(Skill.all, :id, :level, @q.skill_id_eq), { :include_blank => true }, :class => "form-control" %>
+</div>
+
+<div class="form-group">
+  <%= f.label :country_id_eq, "Origin" %>
+  <%= f.select :country_id_eq, options_from_collection_for_select(Country.all, :id, :name, @q.country_id_eq), { :include_blank => true }, :class => "form-control" %>
+</div>
+
+<%= f.submit :class => "btn btn-primary btn-block" %>
+
+<a href="/" class="btn btn-default btn-block">Clear filters</a>
+<% end %>
+
+<!-- table -->
+
 <div class="row">
   <div class="col-md-12">
     <table class="table table-striped table-hover">
       <tr>
         <th>Name</th>
         <th>Teaching language</th>
-
-        <div class="dropdown">
-          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-            Teaching language
-            <span class="caret"></span>
-          </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-            <% @languages.each do |language| %>
-            <li><a href="#"><%= language.name %></a></li>
-            <% end  %>
-          </ul>
-        </div>
-
         <th>Proficiency</th>
-
-        <div class="dropdown">
-          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-            Proficiency
-            <span class="caret"></span>
-          </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-            <% @skills.each do |skill| %>
-            <li><a href="#"><%= skill.level %></a></li>
-            <% end  %>
-          </ul>
-        </div>
-
         <th>About me</th>
         <th>Hourly rate</th>
         <th>Rating</th>
         <th>Origin</th>
-
-        <div class="dropdown">
-          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-            Origin
-            <span class="caret"></span>
-          </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-            <% @origins.each do |origin| %>
-            <li><a href="#"><%= origin.name %></a></li>
-            <% end  %>
-          </ul>
-        </div>
-
         <th>Actions</th>
       </tr>
 
