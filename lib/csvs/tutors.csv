@@ -1,17 +1,17 @@
 language_name,instruction_lang_skill_id,bio,name,rate_hourly,origin_id
-english,9,I am from the UK and speak English fluently,James,20,135
-spanish,8,I am from Germany and speak German fluently,Hans,12,5
-german,13,I am from Spain and speak Spanish fluently,Ricardo,27,159
-french,10,I am from France and speak French fluently,Jean,26,166
-italian,9,I am from Italy and speak Italian fluently,Francesca,26,24
-english,11,I am from Greece and speak Greek fluently,Nicholas,5,72
-spanish,11,I am from Portugal and speak Portugese fluently,Juan,24,23
-german,10,I am from Holland and speak Dutch fluently,Franz,27,24
-french,10,I am from Russia and speak Russian fluently,Dmitry,13,58
-italian,12,I am from China and speak Cantonese fluently,Jane,7,118
-english,10,I am from China and speak Mandarin fluently,Albert,26,170
-spanish,9,I am from South Korea and speak Korean fluently,Justin,25,101
-german,14,I am from Japan and speak Japanese fluently,Adam,5,132
-french,14,I am from India and speak Hindi fluently,Nikhil,9,27
-italian,9,I am from Saudi Arabia and speak Arabic fluently,Alan,25,191
-catalan,13,I am from Israel and speak Hebrew fluently,David,11,43
+english,6,I know a lot about a lot of things 1,John,20,146
+german,2,I know a lot about a lot of things 2,Franz,12,50
+spanish,6,I know a lot about a lot of things 3,Rick,27,147
+french,2,I know a lot about a lot of things 4,Jamie,26,199
+italian,4,I know a lot about a lot of things 5,Ronaldo,26,96
+greek,7,I know a lot about a lot of things 6,Nick,5,63
+portugese,2,I know a lot about a lot of things 7,George,24,63
+dutch,6,I know a lot about a lot of things 8,Fritz,27,133
+russian,6,I know a lot about a lot of things 9,Dominic,13,13
+cantonese,3,I know a lot about a lot of things 10,April,7,141
+mandarin,6,I know a lot about a lot of things 11,George,26,149
+korean,1,I know a lot about a lot of things 12,Rob,25,74
+japanese,3,I know a lot about a lot of things 13,Andrew,5,55
+hindi,6,I know a lot about a lot of things 14,Arlene,9,24
+arabic,5,I know a lot about a lot of things 15,Jordan,25,88
+hebrew,6,I know a lot about a lot of things 16,Alan,11,85

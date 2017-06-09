@@ -94,7 +94,8 @@ namespace :slurp do
       t.bio = row["bio"]
       t.name = row["name"]
       t.rate_hourly = row["rate_hourly"]
-      t.origin_id = row["origin_id"]
+      origin_offset = Country.first.id - 1
+      t.origin_id = row["origin_id"].to_i + origin_offset
       t.save
       puts row.to_hash
       puts t.inspect
@@ -111,8 +112,10 @@ namespace :slurp do
     csv = CSV.parse(csv_text, :headers => true, :encoding => "ISO-8859-1")
     csv.each do |row|
       r = Review.new
-      r.reviewer_id = row["reviewer_id"]
-      r.tutor_id = row["tutor_id"]
+      reviewer_offset = User.first.id - 1
+      r.reviewer_id = row["reviewer_id"].to_i + reviewer_offset
+      tutor_offset = Tutor.first.id - 1
+      r.tutor_id = row["tutor_id"].to_i + tutor_offset
       r.comments = row["comments"]
       r.rating = row["rating"]
       r.save
