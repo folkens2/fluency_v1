@@ -1,17 +1,17 @@
 language_name,instruction_lang_skill_id,bio,name,rate_hourly,origin_id
-english,4,I am from the UK and speak English fluently,James,20,1
-spanish,3,I am from Germany and speak German fluently,Hans,12,2
-german,4,I am from Spain and speak Spanish fluently,Ricardo,27,3
-french,2,I am from France and speak French fluently,Jean,26,4
-italian,1,I am from Italy and speak Italian fluently,Francesca,26,5
-english,5,I am from Greece and speak Greek fluently,Nicholas,5,6
-spanish,1,I am from Portugal and speak Portugese fluently,Juan,24,7
-german,5,I am from Holland and speak Dutch fluently,Franz,27,8
-french,5,I am from Russia and speak Russian fluently,Dmitry,13,9
-italian,2,I am from China and speak Cantonese fluently,Jane,7,10
-english,3,I am from China and speak Mandarin fluently,Albert,26,11
-spanish,4,I am from South Korea and speak Korean fluently,Justin,25,12
-german,1,I am from Japan and speak Japanese fluently,Adam,5,13
-french,1,I am from India and speak Hindi fluently,Nikhil,9,14
-italian,4,I am from Saudi Arabia and speak Arabic fluently,Alan,25,15
-catalan,2,I am from Israel and speak Hebrew fluently,David,11,16
+english,9,I am from the UK and speak English fluently,James,20,135
+spanish,8,I am from Germany and speak German fluently,Hans,12,5
+german,13,I am from Spain and speak Spanish fluently,Ricardo,27,159
+french,10,I am from France and speak French fluently,Jean,26,166
+italian,9,I am from Italy and speak Italian fluently,Francesca,26,24
+english,11,I am from Greece and speak Greek fluently,Nicholas,5,72
+spanish,11,I am from Portugal and speak Portugese fluently,Juan,24,23
+german,10,I am from Holland and speak Dutch fluently,Franz,27,24
+french,10,I am from Russia and speak Russian fluently,Dmitry,13,58
+italian,12,I am from China and speak Cantonese fluently,Jane,7,118
+english,10,I am from China and speak Mandarin fluently,Albert,26,170
+spanish,9,I am from South Korea and speak Korean fluently,Justin,25,101
+german,14,I am from Japan and speak Japanese fluently,Adam,5,132
+french,14,I am from India and speak Hindi fluently,Nikhil,9,27
+italian,9,I am from Saudi Arabia and speak Arabic fluently,Alan,25,191
+catalan,13,I am from Israel and speak Hebrew fluently,David,11,43

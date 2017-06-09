@@ -8,10 +8,10 @@ namespace :slurp do
     csv_text = File.read(Rails.root.join("lib", "csvs", "users.csv"))
     csv = CSV.parse(csv_text, :headers => true, :encoding => "ISO-8859-1")
     csv.each do |row|
-      u = User.new
+      user = User.new
       user.email = row[row.to_hash.keys.first]
       user.password = row[row.to_hash.keys.last]
-      u.save
+      user.save
       puts row.to_hash
       # puts t.inspect
       # puts "#{t.name} saved"
