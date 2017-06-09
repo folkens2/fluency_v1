@@ -1,15 +1,21 @@
 <div class="page-header">
   <h1>
-    Reviews
-    <a href="/reviews/new" class="btn btn-lg btn-success">New Review</a>
+    Reviews for <%= @tutor.name %>
   </h1>
+</div>
+
+<div class="page-header">
+  <img src="<%= @tutor.image %>" width="400" class="img-responsive">
+</div>
+
+<div class="page-header">
+  <a href="/tutor_reviews/<%= @tutor.id %>/new" class="btn btn-lg btn-success">New Review</a>
 </div>
 
 <div class="row">
   <div class="col-md-12">
     <table class="table table-striped table-hover">
       <tr>
-        <th>Tutor</th>
         <th>Rating</th>
         <th>Comments</th>
         <th>Reviewer</th>
@@ -18,7 +24,6 @@
 
       <% @tutor_reviews.each do |review| %>
       <tr>
-        <td><%= review.tutor.name %></td>
         <td><%= review.rating %> / 5 stars </td>
         <td><%= review.comments %></td>
         <td><%= review.user.email %></td>
