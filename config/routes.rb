@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Favoritetutor resource:
+  # CREATE
+  get "/favoritetutors/new", :controller => "favoritetutors", :action => "new"
+  post "/create_favoritetutor", :controller => "favoritetutors", :action => "create"
+
+  # READ
+  get "/favoritetutors", :controller => "favoritetutors", :action => "index"
+  get "/favoritetutors/:id", :controller => "favoritetutors", :action => "show"
+
+  # UPDATE
+  get "/favoritetutors/:id/edit", :controller => "favoritetutors", :action => "edit"
+  post "/update_favoritetutor/:id", :controller => "favoritetutors", :action => "update"
+
+  # DELETE
+  get "/delete_favoritetutor/:id", :controller => "favoritetutors", :action => "destroy"
+  #------------------------------
+
   # Routes for the Country resource:
   # CREATE
   get "/countries/new", :controller => "countries", :action => "new"

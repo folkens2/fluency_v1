@@ -1,0 +1,29 @@
+<div class="page-header">
+  <h1>
+    My favorite tutors
+    <a href="/favoritetutors/new" class="btn btn-lg btn-success">Add another favorite tutor</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Tutor</th>
+        <th>User</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @favoritetutors.each do |favoritetutor| %>
+      <tr>
+        <td><%= favoritetutor.tutor.name %></td>
+        <td><%= favoritetutor.user.email %></td>
+        <td>
+          <a href="/tutors/<%= favoritetutor.tutor_id %>" class="btn btn-primary"><%= favoritetutor.tutor.name %>'s Profile</a>
+          <a href="/delete_favoritetutor/<%= favoritetutor.id %>" class="btn btn-danger" rel="nofollow">Remove from Favorites</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
