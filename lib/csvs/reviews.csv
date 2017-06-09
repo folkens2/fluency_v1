@@ -1,17 +1,40 @@
 reviewer_id,tutor_id,comments,rating
-25,51,He was the best tutor ever,2
-26,48,He was the worst tutor ever,2
-27,60,She taught me stuff,4
-28,56,She taught me a lot of stuff,5
-29,59,She knew how to teach,4
-30,57,She knew the language well,2
-31,49,She helped me with pronunciation,1
-32,62,She helped me with vocabulary,1
-33,59,She taught me about the city where she was from,5
-34,59,He was knowledgeable about the language,2
-35,55,He knew a lot about the culture and taught me all that he knew,2
-36,50,He knew how to teach me as a beginner,4
-37,52,He knew about a lot of languages,4
-38,56,He could understand my broken Spanish,2
-39,60,He could understand my broken Italian,3
-40,52,He could understand my broken German,4
+3,7,He was the best tutor ever,2
+6,10,He was the worst tutor ever,2
+17,32,She taught me stuff,4
+13,10,She taught me a lot of stuff,5
+15,2,She knew how to teach,4
+20,15,She knew the language well,2
+3,6,She helped me with pronunciation,1
+13,28,She helped me with vocabulary,1
+5,25,She taught me about the city where she was from,5
+11,21,He was knowledgeable about the language,2
+12,9,He knew a lot about the culture and taught me all that he knew,2
+4,30,He knew how to teach me as a beginner,4
+19,31,He knew about a lot of languages,4
+8,29,He could understand my broken Spanish,2
+19,27,He could understand my broken Italian,3
+18,4,He could understand my broken German,4
+11,5,He was the best tutor ever,2
+6,24,He was the worst tutor ever,2
+9,5,She taught me stuff,4
+1,9,She taught me a lot of stuff,5
+15,7,She knew how to teach,4
+11,15,She knew the language well,2
+4,10,She helped me with pronunciation,1
+10,3,She helped me with vocabulary,1
+19,32,She taught me about the city where she was from,5
+8,26,He was knowledgeable about the language,2
+17,1,He knew a lot about the culture and taught me all that he knew,2
+2,13,He knew how to teach me as a beginner,4
+19,11,He was the best tutor ever,4
+8,25,He was the worst tutor ever,2
+14,4,She taught me stuff,3
+7,1,She taught me a lot of stuff,4
+13,19,She knew how to teach,2
+5,2,She knew the language well,2
+16,27,She helped me with pronunciation,4
+19,22,She helped me with vocabulary,5
+16,22,She taught me about the city where she was from,4
+10,1,He was knowledgeable about the language,2
+13,11,He knew a lot about the culture and taught me all that he knew,1
