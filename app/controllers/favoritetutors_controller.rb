@@ -26,7 +26,22 @@ class FavoritetutorsController < ApplicationController
     save_status = @favoritetutor.save
 
     if save_status == true
-      redirect_to("/favoritetutors/#{@favoritetutor.id}", :notice => "Favoritetutor created successfully.")
+      redirect_to("/favoritetutors/", :notice => "Favorite tutor added successfully.")
+    else
+      render("favoritetutors/new.html.erb")
+    end
+  end
+
+  def autocreate
+    @favoritetutor = Favoritetutor.new
+
+    @favoritetutor.user_id = params[:user_id]
+    @favoritetutor.tutor_id = params[:tutor_id]
+
+    save_status = @favoritetutor.save
+
+    if save_status == true
+      redirect_to("/tutors/", :notice => "Favorite tutor added successfully.")
     else
       render("favoritetutors/new.html.erb")
     end
@@ -47,7 +62,7 @@ class FavoritetutorsController < ApplicationController
     save_status = @favoritetutor.save
 
     if save_status == true
-      redirect_to("/favoritetutors/#{@favoritetutor.id}", :notice => "Favoritetutor updated successfully.")
+      redirect_to("/favoritetutors/#{@favoritetutor.id}", :notice => "Tutor added to favorites successfully.")
     else
       render("favoritetutors/edit.html.erb")
     end
@@ -59,9 +74,9 @@ class FavoritetutorsController < ApplicationController
     @favoritetutor.destroy
 
     if URI(request.referer).path == "/favoritetutors/#{@favoritetutor.id}"
-      redirect_to("/", :notice => "Favoritetutor deleted.")
+      redirect_to("/", :notice => "Tutor removed from favorites.")
     else
-      redirect_to(:back, :notice => "Favoritetutor deleted.")
+      redirect_to(:back, :notice => "Tutor removed from favorites.")
     end
   end
 end

@@ -11,6 +11,7 @@ class Tutor < ApplicationRecord
   belongs_to :skill, :foreign_key => "instruction_lang_skill_id"
   belongs_to :language, :foreign_key => "instruction_lang_id"
   belongs_to :country, :foreign_key => "origin_id"
+  has_many :favoritetutors, :dependent => :destroy
 
   #Validations
   validates :instruction_lang_id, presence: true

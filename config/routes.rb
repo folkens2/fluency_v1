@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   # CREATE
   get "/favoritetutors/new", :controller => "favoritetutors", :action => "new"
   post "/create_favoritetutor", :controller => "favoritetutors", :action => "create"
+  post "/create_favoritetutor/from_index", :controller => "favoritetutors", :action => "autocreate"
 
   # READ
   get "/favoritetutors", :controller => "favoritetutors", :action => "index"

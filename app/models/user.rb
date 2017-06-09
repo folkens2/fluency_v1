@@ -6,5 +6,7 @@ class User < ApplicationRecord
 
   # Associations
   has_many :reviews, :foreign_key => "reviewer_id", :dependent => :destroy
+  has_many :favoritetutors, :dependent => :destroy
+  has_many :favoritetutors_tutors, :through => :favoritetutors, :source => :tutor
 
 end

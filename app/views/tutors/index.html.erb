@@ -88,6 +88,46 @@
         <td>
           <a href="/tutors/<%= tutor.id %>" class="btn btn-primary">Profile</a>
           <a href="/tutor_reviews/<%= tutor.id %>/new" class="btn btn-success">Write Review</a>
+
+          <!-- adding add/delete favorite tutor button -->
+
+          <% if current_user.favoritetutors_tutors.ids.include? tutor.id %>
+
+          <form action="/delete_favoritetutor/<%= tutor.favoritetutors.find_by(:user_id => current_user.id).id %>" method="get">
+            <!-- Label and input for favoritetutor -->
+            <input type="hidden" id="id" name="id" value="<%= Favoritetutor.find_by(:user_id => current_user.id).id %>">
+            <button class="btn btn-link">
+              <i class="fa fa-heart"></i>
+            </button>
+            <small class="text-muted">Remove <%= tutor.name %> as a favorite tutor</small>
+          </form>
+
+          <% else %>
+
+          <form action="/create_favoritetutor/from_index" method="post">
+            <!-- Hidden input for authenticity token to protect from forgery -->
+            <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+            <!-- Label and input for user_id -->
+            <div class="form-group">
+              <input type="hidden" id="tutor_id" name="tutor_id" class="form-control" value="<%= tutor.id %>">
+            </div>
+
+            <!-- Label and input for user_id -->
+            <div class="form-group">
+              <input type="hidden" id="user_id" name="user_id" class="form-control" value="<%= current_user.id %>">
+            </div>
+
+            <button class="btn btn-link">
+              <i class="fa fa-heart-o"></i>
+            </button>
+            <small class="text-muted">Add <%= tutor.name %> as a favorite tutor</small>
+            <% end %>
+
+          </form>
+
+          <!-- back to original table code -->
+
         </td>
       </tr>
 
