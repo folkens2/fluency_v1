@@ -96,6 +96,7 @@ namespace :slurp do
       t.rate_hourly = row["rate_hourly"]
       origin_offset = Country.first.id - 1
       t.origin_id = row["origin_id"].to_i + origin_offset
+      t.image = row["image"]
       t.save
       puts row.to_hash
       puts t.inspect
@@ -124,7 +125,7 @@ namespace :slurp do
       # puts "#{t.name} saved"
     end
 
-    
+
 
   end
 
