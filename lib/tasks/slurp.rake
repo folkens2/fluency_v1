@@ -89,7 +89,8 @@ namespace :slurp do
       end
       t.instruction_lang_id = lang.id #row["instruction_lang_id"]
 
-      t.instruction_lang_skill_id = row["instruction_lang_skill_id"]
+      skill_offset = Skill.first.id - 1
+      t.instruction_lang_skill_id = row["instruction_lang_skill_id"].to_i + skill_offset
       t.bio = row["bio"]
       t.name = row["name"]
       t.rate_hourly = row["rate_hourly"]
