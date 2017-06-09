@@ -9,8 +9,8 @@ namespace :slurp do
     csv = CSV.parse(csv_text, :headers => true, :encoding => "ISO-8859-1")
     csv.each do |row|
       u = User.new
-      u.email = row["email"]
-      u.password = row["password"]
+      user.email = row[row.to_hash.keys.first]
+      user.password = row[row.to_hash.keys.last]
       u.save
       puts row.to_hash
       # puts t.inspect

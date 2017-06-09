@@ -7,8 +7,4 @@ class User < ApplicationRecord
   # Associations
   has_many :reviews, :foreign_key => "reviewer_id", :dependent => :destroy
 
-  # Validations
-  validates :email, presence: true, uniqueness: true
-  validates :password, presence: true, uniqueness: true
-
 end
